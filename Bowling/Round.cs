@@ -19,7 +19,12 @@ namespace Bowling
             int frameNumber = 0;
             for (int frame = 0; frame < 10; frame++)
             {
-                if (rolls[frameNumber] + rolls[frameNumber + 1] == 10)
+                if(rolls[frameNumber] == 10)
+                {
+                    score += 10 + rolls[frameNumber + 1] + rolls[frameNumber + 2];
+                    frameNumber++;
+                }
+                else if(rolls[frameNumber] + rolls[frameNumber + 1] == 10)
                 {
                     score += 10 + rolls[frameNumber + 2];
                     frame += 2;
@@ -27,8 +32,9 @@ namespace Bowling
                 else
                 {
                     score += rolls[frameNumber] + rolls[frameNumber + 1];
+                    frameNumber += 2;
                 }
-                frameNumber += 2;
+                
             }
 
             return score;

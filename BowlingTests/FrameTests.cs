@@ -43,13 +43,25 @@ namespace Bowling.UnitTest
         }
 
         [TestMethod]
-        public void Spare()
+        public void OneSpare()
         {
             r.Roll(9);
             r.Roll(1);
             r.Roll(2);
             RollBalls(17, 0);
+            // 9 + 1 + 2 + 2 = 14
             Assert.AreEqual(14, r.Score());
+        }
+
+        [TestMethod]
+        public void OneStrike()
+        {
+            r.Roll(10);
+            r.Roll(5);
+            r.Roll(3);
+            RollBalls(16, 0);
+            // 10 + 5 + 3 + 5 + 3 = 26
+            Assert.AreEqual(26, r.Score());
         }
     }
 }
