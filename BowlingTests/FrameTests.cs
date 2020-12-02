@@ -63,5 +63,13 @@ namespace Bowling.UnitTest
             // 10 + 5 + 3 + 5 + 3 = 26
             Assert.AreEqual(26, r.Score());
         }
+
+        [TestMethod]
+        public void AllStrikes()
+        {
+            RollBalls(12, 10);
+            // max points 300
+            Assert.AreEqual(300, r.Score());
+        }
     }
 }

@@ -27,16 +27,14 @@ namespace Bowling
                 else if(rolls[frameNumber] + rolls[frameNumber + 1] == 10)
                 {
                     score += 10 + rolls[frameNumber + 2];
-                    frame += 2;
+                    frameNumber += 2;
                 }
                 else
                 {
                     score += rolls[frameNumber] + rolls[frameNumber + 1];
                     frameNumber += 2;
                 }
-                
             }
-
             return score;
         }
     }
